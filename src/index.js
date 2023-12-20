@@ -89,6 +89,60 @@ btn1.addEventListener("click", () => {
   // очищаем поле ввода
   input1.value = "";
   }
+});
 
-  
+
+// Задача 12.2
+// Пользователь вводит строку. Нужно сформировать и вывести массив из всех чисел в этой строке.
+
+// input 
+// 12 Один567два и три78
+// output
+// [ 12, 567, 78 ]
+
+// DOM elements
+const task2 = document.querySelector('.task-2');
+const input2 = task2.querySelector("#input-2"); // поиск по id
+const btn2 = task2.querySelector(".btn-2");
+const result2 = task2.querySelector('.result-2');
+
+btn2.addEventListener('click', () => {
+
+  const value = input2.value;
+
+  // String to Array conversion
+  const valueArr = value.split(' ');
+
+  // creating extra Array for 'numbers' only
+  let newArr = [];
+
+  // checking every Atring inside Array and removing not number chars
+  valueArr.forEach( (string) => {
+
+          let out = '';
+          for (let symbol of string) {
+              let num = Number(symbol);
+              
+              // checking if num isn't NaN
+              if (num) {
+                  out += num;
+              }
+          }
+      newArr.push(out);
+  });
+
+console.log(newArr); // [ '12', '567', '', '78' ]
+
+// deleting empty strings
+const noEmptyStrings = newArr.filter((str) => str);
+console.log(noEmptyStrings); // [ '12', '567', '78' ]
+
+// creating Array witn Numbers only
+const correctForm = noEmptyStrings.map((str) => Number(str));
+console.log(result2); // [ 12, 567, 78 ]
+
+result2.textContent = correctForm;
+// очищаем поле ввода
+input2.value = "";
+
 });
