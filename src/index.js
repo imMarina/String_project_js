@@ -3,7 +3,7 @@ import './index.scss';
 // находим "главный" элемент нашей страницы и сохраняем ссылку на него в константу
 const taskExample = document.querySelector(".task-example"); // поиск по class
 
-// находим другие необходимые эелменты внутри "главного" элементы
+// находим другие необходимые элeменты внутри "главного" элементы
 // и ссылки на них сохраняем в константы
 const input = taskExample.querySelector("#input"); // поиск по id
 const btn = taskExample.querySelector(".btn");
@@ -144,5 +144,67 @@ console.log(result2); // [ 12, 567, 78 ]
 result2.textContent = correctForm;
 // очищаем поле ввода
 input2.value = "";
+
+});
+
+
+
+// Задание 12.3
+// Подсчитайте количество строчных и прописных букв в строке. Считается, что в строке могут быть только английские буквы и пробелы.
+
+// DOM elements
+const task3 = document.querySelector('.task-3');
+const input3 = task3.querySelector("#input-3"); // поиск по id
+const btn3 = task3.querySelector(".btn-3");
+const result3 = task3.querySelector('.result-3');
+
+btn3.addEventListener('click', () => {
+
+  let value = input3.value;
+
+  // String to Array conversion
+  let valueArr = value.split(' ');
+  console.log(valueArr); // [ 'One', 'Two', 'Three' ]
+
+  let arrUpper =[];
+  let arrLower =[];
+
+  valueArr.forEach( (string) => {
+      
+      let countUpper = 0;
+      let countLower = 0;
+      
+      for (let symbol of string) {
+          // console.log(symbol);
+              
+          if (symbol === symbol.toUpperCase()) {
+              countUpper += 1;
+          }
+
+          if (symbol === symbol.toLowerCase()) {
+              countLower += 1;
+          }
+      }
+      arrUpper.push(countUpper);
+      arrLower.push(countLower);
+  });
+
+  // console.log(arrUpper); // [ 1, 1, 1 ]
+  // console.log(arrLower); // [ 2, 2, 4 ]
+
+  let totalUpper = arrUpper.reduce( (sum, elem) => {
+    return sum + elem;
+  }, 0);
+
+  let totalLower = arrLower.reduce( (sum, elem) => {
+    return sum + elem;
+  }, 0);
+
+  let counter = `Прописных ${totalUpper}\nСтрочных ${totalLower}`;
+
+
+  result3.textContent = counter;
+  // очищаем поле ввода
+  input3.value = "";
 
 });
