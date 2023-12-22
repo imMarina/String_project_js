@@ -252,3 +252,35 @@ btn4.addEventListener('click', () => {
 });
 
 
+
+// Задание 12.5
+// Пользователь вводит слово. Если оно является перевёртышем выведете true иначе false. Слово-перевёртыш - это слово, которое одинаково читается с начала и с конца. Слова могут быть как на английском, так и на русском.
+
+// input
+// мадам
+//output
+// true
+
+// DOM elements
+const task5 = document.querySelector('.task-5');
+const input5 = task5.querySelector("#input-5"); // поиск по id
+const btn5 = task5.querySelector(".btn-5");
+const result5 = task5.querySelector('.result-5');
+
+btn5.addEventListener('click', () => { 
+
+  let value = input5.value;
+
+  // String to Array conversion
+  let valueArr = value.split('');
+  // console.log(valueArr); // [ 'м', 'а', 'д', 'а', 'м' ]
+
+  let reverseWord = valueArr.reverse().join('');
+  console.log(reverseWord);
+
+  (value === reverseWord) ? result5.textContent = true : result5.textContent = false;
+
+  // result5.textContent = longestWord;
+  // очищаем поле ввода
+  input5.value = "";
+});
