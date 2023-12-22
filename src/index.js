@@ -275,12 +275,11 @@ btn5.addEventListener('click', () => {
   let valueArr = value.split('');
   // console.log(valueArr); // [ 'м', 'а', 'д', 'а', 'м' ]
 
+  // reverse and Array to String conversion
   let reverseWord = valueArr.reverse().join('');
-  console.log(reverseWord);
 
   (value === reverseWord) ? result5.textContent = true : result5.textContent = false;
 
-  // result5.textContent = longestWord;
   // очищаем поле ввода
   input5.value = "";
 });
