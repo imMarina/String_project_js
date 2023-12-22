@@ -286,5 +286,40 @@ btn5.addEventListener('click', () => {
 
 
 
+// Задание 12.6
+// Удалите лишние пробелы из строки. Пробелы лишние если они в начале или в конце строки, а также если между словами больше одного пробела. Считается, что строка состоит только из букв и пробелов.
+
+// input
+// Один     два  и три
+// output
+// Один два и три
 
 
+// DOM elements
+const task6 = document.querySelector('.task-6');
+const input6 = task6.querySelector("#input-6"); // поиск по id
+const btn6 = task6.querySelector(".btn-6");
+const result6 = task6.querySelector('.result-6');
+
+btn6.addEventListener('click', () => { 
+
+  let value = input6.value;
+
+  // String to Array conversion
+  let valueArr = value.split(' ');
+
+  // Delete all spaces and push string to the new Array without spaces
+  let arrNoSpace = [];
+  
+  valueArr.forEach( (string) => {
+      if (string) {
+          arrNoSpace.push(string);
+      }
+  });
+
+  // Array to String conversion
+  let result = arrNoSpace.join(' ');
+  result6.textContent = result;
+  // очищаем поле ввода
+  input6.value = "";
+});
