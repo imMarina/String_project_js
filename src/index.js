@@ -323,3 +323,40 @@ btn6.addEventListener('click', () => {
   // очищаем поле ввода
   input6.value = "";
 });
+
+
+// Задание 12.7
+// Дана строка, сделайте первую букву каждого слова прописной (большой).
+
+// DOM elements
+const task7 = document.querySelector('.task-7');
+const input7 = task7.querySelector("#input-7"); // поиск по id
+const btn7 = task7.querySelector(".btn-7");
+const result7 = task7.querySelector('.result-7');
+
+btn7.addEventListener('click', () => { 
+
+  let value = input7.value;
+
+  // String to Array conversion
+  let valueArr = value.split(' ');
+  console.log(valueArr); // [ 'Один', 'два', 'и', 'три' ]
+  
+  // change first letter
+  let arrToUpperCase = valueArr.map( (string) => {
+      
+      let firstLetter = string[0].toUpperCase();
+      let deleteFirst = string.slice(0, 1);
+      let result = string.replace(deleteFirst, firstLetter);
+      
+      return result;
+  });
+  // console.log(arrToUpperCase); // [ 'Один', 'Два', 'И', 'Три' ]
+  
+  // String to Array conversion
+  let result = arrToUpperCase.join(' ');
+
+  result7.textContent = result;
+  // очищаем поле ввода
+  input7.value = "";
+});
