@@ -278,8 +278,13 @@ btn5.addEventListener('click', () => {
   // reverse and Array to String conversion
   let reverseWord = valueArr.reverse().join('');
 
-  (value === reverseWord) ? result5.textContent = true : result5.textContent = false;
+  (value.toLowerCase() === reverseWord.toLowerCase()) ? result5.textContent = true : result5.textContent = false;
 
   // очищаем поле ввода
   input5.value = "";
 });
+
+
+
+
+
