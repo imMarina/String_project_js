@@ -360,3 +360,40 @@ btn7.addEventListener('click', () => {
   // очищаем поле ввода
   input7.value = "";
 });
+
+
+
+// Задание 12.8
+// На вход подаётся строка вида "12+23=35". Выведете на экран `true` если выражение верно или `false` если выражение не верно.
+
+// DOM elements
+const task8 = document.querySelector('.task-8');
+const input8 = task8.querySelector("#input-8"); // поиск по id
+const btn8 = task8.querySelector(".btn-8");
+const result8 = task8.querySelector('.result-8');
+
+
+btn8.addEventListener('click', () => { 
+
+  let value = input8.value; // let value = '12+23=35';
+
+  let findPlus = value.indexOf('+'); // 2
+  let findEqual = value.indexOf('='); // 5
+
+  let num1 = parseInt(value.slice(0, findPlus)); // 12
+  let num2 = parseInt(value.slice(findPlus + 1, findEqual)); // 23
+  let sum = parseInt(value.slice(findEqual + 1)); // 35
+  // console.log(typeof sum); // number
+
+  // let plus = value.slice(findPlus, 3);
+  // console.log(plus); // +
+
+  if (num1 + num2 !== sum) {
+    result8.textContent = false;
+  } else {
+    result8.textContent = true;
+  }
+
+  // очищаем поле ввода
+  input8.value = "";
+});
