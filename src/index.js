@@ -208,3 +208,47 @@ btn3.addEventListener('click', () => {
   input3.value = "";
 
 });
+
+
+
+// Задание 12.4
+// Выведете самое длинное слово в предложении (слова разбиты пробелами).
+
+// input
+// Один два три
+// output
+// Один
+
+// DOM elements
+const task4 = document.querySelector('.task-4');
+const input4 = task4.querySelector("#input-4"); // поиск по id
+const btn4 = task4.querySelector(".btn-4");
+const result4 = task4.querySelector('.result-4');
+
+btn4.addEventListener('click', () => { 
+
+  let value = input4.value;
+
+  // String to Array conversion
+  let valueArr = value.split(' ');
+  console.log(valueArr); // [ 'Один', 'два', 'три' ]
+  
+  // find max length
+  let max = 0;
+  let longestWord = '';
+  
+  for (let i = 0; i < valueArr.length; i++) {
+  
+        if (valueArr[i].length > max) {
+          max = valueArr[i].length;
+          longestWord += valueArr[i];
+        } 
+  
+    }
+
+  result4.textContent = longestWord;
+  // очищаем поле ввода
+  input4.value = "";
+});
+
+
