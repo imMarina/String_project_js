@@ -64,31 +64,25 @@ const result1 = task1.querySelector('.result');
 
 btn1.addEventListener("click", () => {
 
-  const value = input1.value;
+  const string = input1.value;
+
+  let correctForm = '';
   
-  // delete all spaces
-  let valueNoSpace = value.replaceAll(' ', '')
+  for (let symbol of string) {
+    if (symbol === '8' && correctForm.length === 0) {
+      correctForm += '7';
+    } else if (parseInt(symbol)) {
+      correctForm += symbol;
+    }
+  }
+
+  if (correctForm.length === 11) {
+    // Array to String conversion
+    result1.textContent = `+${correctForm}`;
+    }
   
-  // String to Array conversion
-  let valueArr = valueNoSpace.split(''); 
-  
-  // remove not numbers chars
-  let onlyNumbers = valueArr.filter( (str) => {
-      let num = Number(str);
-      return num >= 0 && num < 10;
-  });
-  
-  // add char '+7'
-  onlyNumbers.splice(0, 1, '+7');
-  console.log(onlyNumbers); 
-  
-  if (onlyNumbers.length === 11) {
-  // Array to String conversion
-  const correctForm = onlyNumbers.join("");
-  result1.textContent = correctForm;
   // очищаем поле ввода
   input1.value = "";
-  }
 });
 
 
