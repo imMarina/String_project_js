@@ -58,9 +58,9 @@ btn.addEventListener("click", () => {
 
 // DOM elements
 const task1 = document.querySelector('.task-1');
-const input1 = task1.querySelector("#input-1"); // поиск по id
-const btn1 = task1.querySelector(".btn-1");
-const result1 = task1.querySelector('.result-1');
+const input1 = task1.querySelector("#input"); // поиск по id
+const btn1 = task1.querySelector(".btn");
+const result1 = task1.querySelector('.result');
 
 btn1.addEventListener("click", () => {
 
@@ -102,9 +102,9 @@ btn1.addEventListener("click", () => {
 
 // DOM elements
 const task2 = document.querySelector('.task-2');
-const input2 = task2.querySelector("#input-2"); // поиск по id
-const btn2 = task2.querySelector(".btn-2");
-const result2 = task2.querySelector('.result-2');
+const input2 = task2.querySelector("#input"); // поиск по id
+const btn2 = task2.querySelector(".btn");
+const result2 = task2.querySelector('.result');
 
 btn2.addEventListener('click', () => {
 
@@ -154,9 +154,9 @@ input2.value = "";
 
 // DOM elements
 const task3 = document.querySelector('.task-3');
-const input3 = task3.querySelector("#input-3"); // поиск по id
-const btn3 = task3.querySelector(".btn-3");
-const result3 = task3.querySelector('.result-3');
+const input3 = task3.querySelector("#input"); // поиск по id
+const btn3 = task3.querySelector(".btn");
+const result3 = task3.querySelector('.result');
 
 btn3.addEventListener('click', () => {
 
@@ -221,9 +221,9 @@ btn3.addEventListener('click', () => {
 
 // DOM elements
 const task4 = document.querySelector('.task-4');
-const input4 = task4.querySelector("#input-4"); // поиск по id
-const btn4 = task4.querySelector(".btn-4");
-const result4 = task4.querySelector('.result-4');
+const input4 = task4.querySelector("#input"); // поиск по id
+const btn4 = task4.querySelector(".btn");
+const result4 = task4.querySelector('.result');
 
 btn4.addEventListener('click', () => { 
 
@@ -263,9 +263,9 @@ btn4.addEventListener('click', () => {
 
 // DOM elements
 const task5 = document.querySelector('.task-5');
-const input5 = task5.querySelector("#input-5"); // поиск по id
-const btn5 = task5.querySelector(".btn-5");
-const result5 = task5.querySelector('.result-5');
+const input5 = task5.querySelector("#input"); // поиск по id
+const btn5 = task5.querySelector(".btn");
+const result5 = task5.querySelector('.result');
 
 btn5.addEventListener('click', () => { 
 
@@ -297,9 +297,9 @@ btn5.addEventListener('click', () => {
 
 // DOM elements
 const task6 = document.querySelector('.task-6');
-const input6 = task6.querySelector("#input-6"); // поиск по id
-const btn6 = task6.querySelector(".btn-6");
-const result6 = task6.querySelector('.result-6');
+const input6 = task6.querySelector("#input"); // поиск по id
+const btn6 = task6.querySelector(".btn");
+const result6 = task6.querySelector('.result');
 
 btn6.addEventListener('click', () => { 
 
@@ -330,9 +330,9 @@ btn6.addEventListener('click', () => {
 
 // DOM elements
 const task7 = document.querySelector('.task-7');
-const input7 = task7.querySelector("#input-7"); // поиск по id
-const btn7 = task7.querySelector(".btn-7");
-const result7 = task7.querySelector('.result-7');
+const input7 = task7.querySelector("#input"); // поиск по id
+const btn7 = task7.querySelector(".btn");
+const result7 = task7.querySelector('.result');
 
 btn7.addEventListener('click', () => { 
 
@@ -368,9 +368,9 @@ btn7.addEventListener('click', () => {
 
 // DOM elements
 const task8 = document.querySelector('.task-8');
-const input8 = task8.querySelector("#input-8"); // поиск по id
-const btn8 = task8.querySelector(".btn-8");
-const result8 = task8.querySelector('.result-8');
+const input8 = task8.querySelector("#input"); // поиск по id
+const btn8 = task8.querySelector(".btn");
+const result8 = task8.querySelector('.result');
 
 
 btn8.addEventListener('click', () => { 
