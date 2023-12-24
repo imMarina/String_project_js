@@ -103,7 +103,7 @@ const result2 = task2.querySelector('.result');
 
 btn2.addEventListener('click', () => {
 
-  const value = input2.value;
+  const value = input2.value; // '12 0 Один567два и три78';
 
   // String to Array conversion
   const valueArr = value.split(' ');
@@ -113,28 +113,33 @@ btn2.addEventListener('click', () => {
 
   // checking every Atring inside Array and removing not number chars
   valueArr.forEach( (string) => {
+    let out = '';
+    for (let symbol of string) {
+        
+        // if (symbol === '0') {
+        //     out += symbol;
+        // } 
+        // let num = Number(symbol);
+        // if (num) {
+        //     out += num;
+        // }
 
-          let out = '';
-          for (let symbol of string) {
-              let num = Number(symbol);
-              
-              // checking if num isn't NaN
-              if (num) {
-                  out += num;
-              }
-          }
-      newArr.push(out);
+        if (parseInt(symbol) || symbol === '0') {
+          out += symbol;
+      } 
+    }
+    newArr.push(out);
   });
 
-console.log(newArr); // [ '12', '567', '', '78' ]
+console.log(newArr); // [ '12', '0', '567', '', '78' ]
 
 // deleting empty strings
 const noEmptyStrings = newArr.filter((str) => str);
-console.log(noEmptyStrings); // [ '12', '567', '78' ]
+console.log(noEmptyStrings); // [ '12', '0', '567', '78' ]
 
 // creating Array witn Numbers only
 const correctForm = noEmptyStrings.map((str) => Number(str));
-console.log(result2); // [ 12, 567, 78 ]
+console.log(correctForm); // [ 12, 0, 567, 78 ]
 
 result2.textContent = correctForm;
 // очищаем поле ввода
