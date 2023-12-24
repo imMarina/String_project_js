@@ -71,7 +71,7 @@ btn1.addEventListener("click", () => {
   for (let symbol of string) {
     if (symbol === '8' && correctForm.length === 0) {
       correctForm += '7';
-    } else if (parseInt(symbol)) {
+    } else if (parseInt(symbol) || symbol === '0') {
       correctForm += symbol;
     }
   }
@@ -84,6 +84,7 @@ btn1.addEventListener("click", () => {
   // очищаем поле ввода
   input1.value = "";
 });
+
 
 
 // Задача 12.2
