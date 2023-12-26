@@ -160,53 +160,25 @@ const result3 = task3.querySelector('.result');
 
 btn3.addEventListener('click', () => {
 
-  let value = input3.value;
+  let string = input3.value;
 
-  // String to Array conversion
-  let valueArr = value.split(' ');
-  console.log(valueArr); // [ 'One', 'Two', 'Three' ]
+  let countUpper = 0;
+  let countLower = 0;
 
-  let arrUpper =[];
-  let arrLower =[];
-
-  valueArr.forEach( (string) => {
-      
-      let countUpper = 0;
-      let countLower = 0;
-      
-      for (let symbol of string) {
-          // console.log(symbol);
-              
-          if (symbol === symbol.toUpperCase()) {
-              countUpper += 1;
-          }
-
-          if (symbol === symbol.toLowerCase()) {
-              countLower += 1;
-          }
+  for (let symbol of string) {
+          
+      if (symbol === symbol.toUpperCase() && symbol !== ' ') {
+          countUpper += 1;
+      } else if (symbol === symbol.toLowerCase() && symbol !== ' ') {
+          countLower += 1;
       }
-      arrUpper.push(countUpper);
-      arrLower.push(countLower);
-  });
+  }
 
-  // console.log(arrUpper); // [ 1, 1, 1 ]
-  // console.log(arrLower); // [ 2, 2, 4 ]
-
-  let totalUpper = arrUpper.reduce( (sum, elem) => {
-    return sum + elem;
-  }, 0);
-
-  let totalLower = arrLower.reduce( (sum, elem) => {
-    return sum + elem;
-  }, 0);
-
-  let counter = `Прописных ${totalUpper}\nСтрочных ${totalLower}`;
-
+  let counter = `Прописных ${countUpper}\nСтрочных ${countLower}`;
 
   result3.textContent = counter;
   // очищаем поле ввода
   input3.value = "";
-
 });
 
 
