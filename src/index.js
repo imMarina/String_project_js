@@ -115,14 +115,6 @@ btn2.addEventListener('click', () => {
   valueArr.forEach( (string) => {
     let out = '';
     for (let symbol of string) {
-        
-        // if (symbol === '0') {
-        //     out += symbol;
-        // } 
-        // let num = Number(symbol);
-        // if (num) {
-        //     out += num;
-        // }
 
         if (parseInt(symbol) || symbol === '0') {
           out += symbol;
