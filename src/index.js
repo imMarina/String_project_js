@@ -128,23 +128,18 @@ btn2.addEventListener('click', () => {
           out += symbol;
       } 
     }
-    newArr.push(out);
+    newArr.push(parseInt(out));
   });
 
-console.log(newArr); // [ '12', '0', '567', '', '78' ]
+console.log(newArr); // [ 12, 0, 567, NaN, 78 ]
 
 // deleting empty strings
-const noEmptyStrings = newArr.filter((str) => str);
-console.log(noEmptyStrings); // [ '12', '0', '567', '78' ]
-
-// creating Array witn Numbers only
-const correctForm = noEmptyStrings.map((str) => Number(str));
+const correctForm = newArr.filter((str) => str || str === 0);
 console.log(correctForm); // [ 12, 0, 567, 78 ]
 
 result2.textContent = correctForm;
 // очищаем поле ввода
 input2.value = "";
-
 });
 
 
