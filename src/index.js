@@ -235,9 +235,9 @@ btn5.addEventListener('click', () => {
   // console.log(valueArr); // [ 'м', 'а', 'д', 'а', 'м' ]
 
   // reverse and Array to String conversion
-  let reverseWord = valueArr.reverse().join('');
+  let reverseWord = valueArr.toReversed().join('');
 
-  (value.toLowerCase() === reverseWord.toLowerCase()) ? result5.textContent = true : result5.textContent = false;
+  result5.textContent = value.toLowerCase() === reverseWord.toLowerCase() ? true : false;
 
   // очищаем поле ввода
   input5.value = "";
