@@ -205,7 +205,7 @@ btn4.addEventListener('click', () => {
   
     }
 
-  result4.textContent = longestWord;
+  result4.textContent = `Слово: "${longestWord}", длина: ${longestWord.length}`;
   // очищаем поле ввода
   input4.value = "";
 });
