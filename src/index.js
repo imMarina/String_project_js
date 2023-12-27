@@ -287,23 +287,15 @@ btn7.addEventListener('click', () => {
 
   let value = input7.value;
 
-  // String to Array conversion
-  let valueArr = value.split(' ');
-  console.log(valueArr); // [ 'Один', 'два', 'и', 'три' ]
-  
-  // change first letter
-  let arrToUpperCase = valueArr.map( (string) => {
-      
-      let firstLetter = string[0].toUpperCase();
-      let deleteFirst = string.slice(0, 1);
-      let result = string.replace(deleteFirst, firstLetter);
-      
-      return result;
+  // String to Array conversion / + map method
+  let valueArr = value.split(' ').map( (string) => {
+        
+    let firstLetter = string[0].toUpperCase();
+    return string.replace(string[0], firstLetter);
   });
-  // console.log(arrToUpperCase); // [ 'Один', 'Два', 'И', 'Три' ]
-  
+
   // String to Array conversion
-  let result = arrToUpperCase.join(' ');
+  let result = valueArr.join(' ');
 
   result7.textContent = result;
   // очищаем поле ввода
