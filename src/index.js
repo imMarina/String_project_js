@@ -264,20 +264,10 @@ btn6.addEventListener('click', () => {
 
   let value = input6.value;
 
-  // String to Array conversion
-  let valueArr = value.split(' ');
+  let result = value.split(' ')
+                    .filter((string) => string)
+                    .join(' ');
 
-  // Delete all spaces and push string to the new Array without spaces
-  let arrNoSpace = [];
-  
-  valueArr.forEach( (string) => {
-      if (string) {
-          arrNoSpace.push(string);
-      }
-  });
-
-  // Array to String conversion
-  let result = arrNoSpace.join(' ');
   result6.textContent = result;
   // очищаем поле ввода
   input6.value = "";
