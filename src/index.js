@@ -318,22 +318,47 @@ btn8.addEventListener('click', () => {
 
   let value = input8.value; // let value = '12+23=35';
 
-  let findPlus = value.indexOf('+'); // 2
-  let findEqual = value.indexOf('='); // 5
+  let valueArr = value.split('=');  // [ '12+23', '35' ]
 
-  let num1 = parseInt(value.slice(0, findPlus)); // 12
-  let num2 = parseInt(value.slice(findPlus + 1, findEqual)); // 23
-  let sum = parseInt(value.slice(findEqual + 1)); // 35
-  // console.log(typeof sum); // number
+  // console.log(valueArr[0]); // 12+23
+  // console.log(valueArr[valueArr.length - 1]); // 35
 
-  // let plus = value.slice(findPlus, 3);
-  // console.log(plus); // +
+  const mathOperation = ['+', '-', '/', '*', '**'];
 
-  if (num1 + num2 !== sum) {
-    result8.textContent = false;
-  } else {
-    result8.textContent = true;
+  const operation = mathOperation.find((op) => valueArr[0].includes(op)); // +
+
+  let indexOfMathSymbol = valueArr[0].indexOf(operation); // 2
+  
+  let num1 = parseInt(value.slice(0, indexOfMathSymbol)); // 12
+  let num2 = parseInt(value.slice(indexOfMathSymbol + 1)); // 23
+  let total = parseInt(valueArr[valueArr.length - 1]); // 35
+
+  let result;
+
+  switch (operation) {
+  case '+':
+    result = num1 + num2;
+    break;
+  case '-':
+    result = num1 - num2;
+    break;
+  case '/':
+    result = num1 / num2;
+    break;
+  case '*':
+    result = num1 * num2;
+    break;
+  case '**': // doesn't work this way ??? HELP
+    result = num1 ** num2;
+    break; 
   }
+
+
+  if (result === total) {
+    result8.textContent = true;
+} else {
+    result8.textContent = false;
+}
 
   // очищаем поле ввода
   input8.value = "";
