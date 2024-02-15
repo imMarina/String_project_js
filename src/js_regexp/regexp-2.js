@@ -8,7 +8,7 @@
 
 export function regexpTwo(string) {
 
-    const regexp = /[0-9]{1,}/g;
+    const regexp = /[0-9]+/g;
     const correctForm = string.match(regexp).map((el) => Number(el));
 
     // console.log(correctForm); // [ 12, 567, 78 ]
