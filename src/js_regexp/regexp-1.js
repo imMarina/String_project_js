@@ -3,18 +3,15 @@
 
 export function regexpOne(string) { // '8 (923) 5050505'
 
-    const regexp = /\d{1,}/g;
-    const result = string.match(regexp); // [ '8', '923', '5050505' ]
+    // delete all 'NaN symbols'
+    let onlyNum = string.replace(/\D{1,}/g, ""); // 89235050505
 
-    if (result[0] === '8') {
-        result[0] = '7';
-    }
-
+    const regexp = /^8/;
+    if (regexp.test(onlyNum)) onlyNum = onlyNum.replace(regexp, "7");
+    
     let correctForm = ''; 
-    for (let i = 0; i < result.length; i++) {
-        correctForm += parseInt(result[i])
-    }
-    // console.log(correctForm); // 79235050505
-
     return correctForm.length === 11 ? `+${correctForm}` : '';
 }
+
+
+
