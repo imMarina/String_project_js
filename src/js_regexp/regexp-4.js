@@ -6,7 +6,7 @@
 // output
 // Один
 
-export function taskFour(string) {
+export function regexpFour(string) {
 
     // let string = 'Один English englishРус';
     let max = 0;
