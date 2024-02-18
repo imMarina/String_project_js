@@ -6,11 +6,11 @@
 // output
 // Один два и три
 
-export function taskSix(string) {
+export function regexpSix(string) {
     
     const regexp = /\s{1,}/g;
     // const regexp = /\s+/g;
-    const correctForm  =  string.replace(regexp, ' ');
+    const correctForm  =  string.trim().replace(regexp, ' ');
     // console.log(typeof correctForm, correctForm); // string  Один два и три
     return correctForm;
 }
