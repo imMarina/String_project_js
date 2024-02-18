@@ -6,9 +6,10 @@
 //output
 // true
 
-export function taskFive(string) {
+export function regexpFive(string) {
 
-    const regexp = /[a-z\D]{1,}/gi; 
+    //const regexp = /[a-z\D]{1,}/gi; 
+    const regexp = /[a-zа-яё]{1,}/gi;
     const checkedString = string.match(regexp).join(' ');
     // console.log(checkedString); // мадам
     
