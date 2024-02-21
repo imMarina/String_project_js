@@ -8,10 +8,7 @@ export function regexpOne(string) { // '8 (923) 5050505'
 
     const regexp = /^8/;
     if (regexp.test(onlyNum)) onlyNum = onlyNum.replace(regexp, "7");
-    
+
     let correctForm = ''; 
-    return correctForm.length === 11 ? `+${correctForm}` : '';
+    return (onlyNum.length === 11) ? correctForm += `+${onlyNum}` : '';
 }
-
-
-
