@@ -1,13 +1,13 @@
 import './index.scss';
 
 import { taskExample } from './js/task-example.js';
-import { taskOne } from './js/task-1.js';
-import { taskTwo } from './js/task-2.js';
-import { taskThree } from './js/task-3.js';
-import { taskFour } from './js/task-4.js';
-import { taskFive } from './js/task-5.js';
-import { taskSix } from './js/task-6.js';
-import { taskSeven } from './js/task-7.js';
+import { regexpOne as taskOne } from './js_regexp/regexp-1.js';
+import { regexpTwo as taskTwo } from './js_regexp/regexp-2.js';
+import { regexpThree as taskThree } from './js_regexp/regexp-3.js';
+import { regexpFour as taskFour } from './js_regexp/regexp-4.js';
+import { regexpFive as taskFive } from './js_regexp/regexp-5.js';
+import { regexpSix as taskSix } from './js_regexp/regexp-6.js';
+import { regexpSeven as taskSeven } from './js_regexp/regexp-7.js';
 import { taskEight } from './js/task-8.js';
 
 
@@ -109,3 +109,4 @@ tasks.forEach( (task) => {
         input.value = "";
       }
   });});
+  
