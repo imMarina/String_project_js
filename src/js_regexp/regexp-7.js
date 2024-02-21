@@ -3,8 +3,11 @@
 
 // const string = 'Один два и три';
 
-const string = 'one two three'
+export function regexpSeven(string) { // 'one two three'
+    const correctForm = string.split(' ').map( (string) => {
+        return string.replace(/\b[a-zа-яё]/gi, string[0].toUpperCase())
+    }); 
+    return correctForm; // [ 'One', 'Two', 'Three' ]
+}
 
-const regexp = /\b[a-z]/gi;
-let result = string.match(regexp);
-console.log(result); // [ 'o', 't', '' ]
+
